@@ -57,4 +57,4 @@ MAX_CONTROL_VELOCITY_Z = 3;
 MAX_MAN_THR = 0.9;
 MIN_MAN_THR = 0.05;
 %% run simulink model
-WaypointFollowing_Sim
+WaypointFollowing_Sim_v2
