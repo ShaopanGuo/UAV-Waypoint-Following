@@ -1,0 +1,95 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   11 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "x1"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:389-391"\
+    }\
+    ChartData {\
+      Name         "y1"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:435-437"\
+    }\
+    ChartData {\
+      Name         "z1"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:481-483"\
+    }\
+    ChartData {\
+      Name         "z1_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:481-483"\
+    }\
+    ChartData {\
+      Name         "hold_x_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:527-538"\
+    }\
+    ChartData {\
+      Name         "hold_y_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:600-611"\
+    }\
+    ChartData {\
+      Name         "hold_z_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:673-684"\
+    }\
+    ChartData {\
+      Name         "waypoint_1_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:765-780"\
+    }\
+    ChartData {\
+      Name         "waypoint_2_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:851-866"\
+    }\
+    ChartData {\
+      Name         "waypoint_3_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:937-952"\
+    }\
+    ChartData {\
+      Name         "waypoint_4_flag"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  "ModeSwitch_HIL:1329:1023-1038"\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

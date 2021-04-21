@@ -1,19 +1,13 @@
-%%%  PosControl_Sim
+%%%  ModeSwitch_HIL
 clear
-path('./icon/',path);
-Init;
-
+path( './icon/',path);
+load vehicle_local_position.mat;
 %Constant value
 RAD2DEG = 57.2957795;
 DEG2RAD = 0.0174533;
 %throttle when UAV is hovering
 THR_HOVER = 0.609;
-%% Initial condition
-ModelInit_PosE = [0, 0, -100];
-ModelInit_VelB = [0, 0, 0];
-ModelInit_AngEuler = [0, 0, 0];
-ModelInit_RateB = [0, 0, 0];
-ModelInit_Rads = 0;
+
 %% control parameter
 %Attitude PID parameters
 Kp_PITCH_ANGLE = 6.5;
@@ -25,8 +19,9 @@ Kp_ROLL_AngleRate = 0.1;
 Ki_ROLL_AngleRate = 0.02;
 Kd_ROLL_AngleRate = 0.001;
 
-Kp_YAW_AngleRate = 0.5;
-Ki_YAW_AngleRate = 0.01;
+Kp_YAW_ANGLE = 3;
+Kp_YAW_AngleRate = 0.3;
+Ki_YAW_AngleRate = 0.001;
 Kd_YAW_AngleRate = 0.00;
 %Position PID parameters
 Kpxp = 1.0;
@@ -46,6 +41,8 @@ Saturation_I_az = 5;
 %max control angle,default 35deg
 MAX_CONTROL_ANGLE_ROLL = 35;
 MAX_CONTROL_ANGLE_PITCH  = 35;
+MAX_CONTROL_ANGLE_NAV_ROLL = 15; 
+MAX_CONTROL_ANGLE_NAV_PITCH  = 15;
 %max control angle rate,rad/s 
 MAX_CONTROL_ANGLE_RATE_PITCH = 220;
 MAX_CONTROL_ANGLE_RATE_ROLL = 220;
@@ -57,4 +54,4 @@ MAX_CONTROL_VELOCITY_Z = 3;
 MAX_MAN_THR = 0.9;
 MIN_MAN_THR = 0.05;
 %% run simulink model
-WaypointFollowing_Sim
+uavWaypointFollowing_HIL;
